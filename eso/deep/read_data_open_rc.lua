@@ -1,10 +1,10 @@
 require "torch";
 
-sequence_file="/data/ted/multi/eso/channel_open_rc_si5.txt";
-sample_file="/data/ted/multi/eso/sample_open_rc_si5.txt";
-label_file="/data/ted/multi/eso/label_open_rc_si5.txt";
+sequence_file="/data/ted/multi/eso/channel_open_rc.txt";
+sample_file="/data/ted/multi/eso/sample_open_rc.txt";
+label_file="/data/ted/multi/eso/label_open_rc.txt";
 sequence_weight_file="/data/ted/multi/eso/weight_open400.txt";
-mid_file="/data/ted/multi/eso/mid_open_rc_si5.txt";
+mid_file="/data/ted/multi/eso/mid_open_rc.txt";
 
 Num_sam=315;
 
@@ -93,7 +93,7 @@ function readdata(x)
     local shuffled_indices = torch.randperm(sequence:size(1)):long()
     sequence = sequence:index(1, shuffled_indices):squeeze()
     --length choosing
-    --sequence=sequence:narrow(2,301,401);
+    sequence=sequence:narrow(2,301,401);
     labels = torch.Tensor(labels):index(1, shuffled_indices):squeeze()
     mid = torch.Tensor(mid):index(1, shuffled_indices):squeeze()
     samples=torch.Tensor(samples):index(1, shuffled_indices):squeeze()
