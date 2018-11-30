@@ -3,7 +3,7 @@ require "torch";
 sequence_file="/data/ted/multi/eso/channel_open_rc.txt";
 sample_file="/data/ted/multi/eso/sample_open_rc.txt";
 label_file="/data/ted/multi/eso/label_open_rc.txt";
-sequence_weight_file="/data/ted/multi/eso/weight_open400.txt";
+sequence_weight_file="/data/ted/multi/eso/weight_open.txt";
 mid_file="/data/ted/multi/eso/mid_open_rc.txt";
 
 Num_sam=315;
