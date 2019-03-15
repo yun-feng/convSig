@@ -2,8 +2,8 @@ use warnings;
 use strict;
 
 my $POS=int($ARGV[0]);
-my $PROB=$ARGV[1];
-my $PROB_L=int($PROB*10);
+my $PROB_L=int($ARGV[1]);
+my $PROB=$PROB_L/10.0;
 
 my $seq="/data/ted/multi/eso/seq_open_rc_si".$POS."_".$PROB_L.".txt";
 

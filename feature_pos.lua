@@ -7,8 +7,8 @@ require "nngraph";
 dofile "/data/ted/multi/eso/deep/read_data_open_rc.lua";
 
 POS=tonumber(arg[1])
-PROB=tonumber(arg[2])
-PROB_L=torch.ceil(PROB*10)
+PROB_L=tonumber(arg[2])
+PROB=PROB_L/10.0
 
 sequence_file="/data/ted/multi/eso/channel_open_rc_si"..POS.."_"..PROB_L..".txt";
 sample_file="/data/ted/multi/eso/sample_open_rc_si"..POS.."_"..PROB_L..".txt";
@@ -17,7 +17,7 @@ sequence_weight_file="/data/ted/multi/eso/weight_open.txt";
 mid_file="/data/ted/multi/eso/mid_open_rc_si"..POS.."_"..PROB_L..".txt";
 
 
-model=torch.load("/data/ted/multi/eso/model_open_bg_rc_si"..POS.."_"..PROB_L)
+model=torch.load("/data/ted/multi/eso/model_open_bg_rc_si_"..POS.."_"..PROB_L)
 
 train={}
 

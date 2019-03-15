@@ -8,8 +8,8 @@ my $chrom_file ="/data/ted/multi/Ubiquitous-sorted.bed";
 my @rc_table=("T","C","G","A","N");
 
 my $POS=int($ARGV[0]);
-my $PROB=$ARGV[1];
-my $PROB_L=int($PROB*10);
+my $PROB_L=int($ARGV[1]);
+my $PROB=$PROB_L/10.0;
 
 sub RC($){
 	my $old_array=shift;

@@ -11,8 +11,8 @@ dofile "/data/ted/multi/eso/deep/criterion_open_rc.lua";
 dofile "/data/ted/multi/eso/deep/train_open_rc.lua";
 
 POS=tonumber(arg[1])
-PROB=tonumber(arg[2])
-PROB_L=torch.ceil(PROB*10)
+PROB_L=tonumber(arg[2])
+PROB=PROB_L/10.0
 
 sequence_file="/data/ted/multi/eso/channel_open_rc_si"..POS.."_"..PROB_L..".txt";
 sample_file="/data/ted/multi/eso/sample_open_rc_si"..POS.."_"..PROB_L..".txt";
