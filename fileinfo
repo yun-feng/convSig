@@ -1,0 +1,41 @@
+convsig deep part
+
+
+prepare_open_rc_spikein.pl
+	convert mutation file to sequence and label used by algorithm
+	only consider open chromatin region
+	input:Genome fasta file; mutation file
+	output: sequence file; label file ; middle point base file; sample info file; background sequence file
+	
+******
+prepare.pl:
+prepare_open_rc.pl
+prepare_open_rc_spikein_pos.pl
+ 
+convert.pl:
+	convert sequence file to channel file used by deep CNN
+	input: sequence file
+	output: channel file
+
+weight2.pl
+	calculate the cosine similarity between different sequences
+	input: two identical sequence file
+	output: cosine similarity file
+	
+cos_bg.pl
+	calculate the cosine similarity between mutated and background sequences
+	input: sequence file; background sequence file
+	output: bg cosine similarity file
+	
+eso/weight.r
+	calculate the true weight used in algorithm for every mutated sequence
+	input: cosine similarity file; bg cosine similarity file
+	output: weight file
+
+eso/deep/*.lua
+	torch7 files 
+	
+
+*******
+feature.lua;  Error_analysis.R; analysis.R
+	analysis files
